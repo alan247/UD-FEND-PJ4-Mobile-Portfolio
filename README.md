@@ -27,6 +27,6 @@ To get started, check out the repository, inspect the code,
 1. Create a separate loop to populate an array with all the necessary phases
 1. Set the number of pizzas to 35 instead of 200
 1. Count the number of pizza containers and iterate through them to set a new width when changePizzaSizes() is called
-1. Optimize pizza.png image (dimensions and file size)
+1. Optimize pizza.png
 
 
