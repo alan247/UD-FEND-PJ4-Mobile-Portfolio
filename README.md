@@ -23,10 +23,14 @@ To get started, check out the repository, inspect the code,
 
 ### Part 2: Pizzeria (views/js/main.js)
 
-1. Use getElementsByClassName for better performance
+1. Changed all instances of `document.querySelectorAll()` to either `document.getElementsByClassName()` or `document.getElementById()` for better performance
 1. Create a separate loop to populate an array with all the necessary phases
-1. Set the number of pizzas to 35 instead of 200
+1. Set the number of background pizzas to 35 instead of 200
 1. Count the number of pizza containers and iterate through them to set a new width when changePizzaSizes() is called
 1. Optimize pizza.png
+1. Removed determineDx function and used percentages instead of pixels to set the new pizzas' width
+1. Calculate the number of pizzas needed for the background by calculating the number of rows available in the viewport (innerHeight / 100)
+
+
 
 
