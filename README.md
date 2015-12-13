@@ -4,8 +4,8 @@
 
 This project is nothing but a bogus website on which several optimizations were made as part of the Project 4 of Udacity's Front End Nanodegree Program. As such, you don't need to do anything special to run the project. Just head to the following links and use PageSpeed Insights and Dev Tool's timeline to see how good it performs.
 
-1. [PageSpeed Optimizations - Bogus Portfolio] (./dist/index.html)
-2. [60 FPS Optimization - Pizzeria] (./dist/views/pizza.html)
+1. [PageSpeed Optimizations (Bogus Portfolio)] (http://alan247.github.io/frontend-nanodegree-mobile-portfolio/dist/index.html)
+2. [60 FPS Optimization (Pizzeria)] (http://alan247.github.io/frontend-nanodegree-mobile-portfolio/dist/views/pizza.html)
 
 ## Optimizations Made
 
