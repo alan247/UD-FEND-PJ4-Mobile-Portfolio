@@ -1,15 +1,11 @@
-
-
-
-
-
-
-
 # Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+## How to run
 
-To get started, check out the repository, inspect the code,
+This project is nothing but a bogus website on which several optimizations were made as part of the Project 4 of Udacity's Front End Nanodegree Program. As such, you don't need to do anything special to run the project. Just head to the following links and use PageSpeed Insights and Dev Tool's timeline to see how good it performs.
+
+1. [PageSpeed Optimizations - Bogus Portfolio] (./dist/index.html)
+2. [60 FPS Optimization - Pizzeria] (./dist/views/pizza.html)
 
 ## Optimizations Made
 
