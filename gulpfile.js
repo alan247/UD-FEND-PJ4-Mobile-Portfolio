@@ -70,6 +70,3 @@ gulp.task('lint', function () {
 		// lint error, return the stream and pipe to failOnError last.
 		.pipe(eslint.failOnError());
 });
-
-
-
