@@ -1,4 +1,4 @@
-# Website Performance Optimization portfolio project
+# Website performance optimization portfolio project
 
 ## How to run
 
