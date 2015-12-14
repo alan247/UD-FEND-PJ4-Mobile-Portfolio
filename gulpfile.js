@@ -1,27 +1,16 @@
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-//var concat = require('gulp-concat');
 var uglify= require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
 var clean = require('gulp-clean');
-//var sourcemaps = require('gulp-sourcemaps');
-
-
-
 
 gulp.task('default', ['copy-htmls', 'images', 'styles', 'scripts', 'lint'], function() {
 	gulp.watch('./**/*.scss', ['styles']);
 	gulp.watch('./**/*.js', ['lint']);
 	gulp.watch('./**/*.html', ['copy-htmls']);
-
-
-	browserSync.init({
-		server: './dist'
-	});
 	console.log('Listo!');
 });
 
@@ -50,7 +39,6 @@ gulp.task('styles', function() {
 			browsers: ['last 2 versions']
 		}))
 		.pipe(gulp.dest('./dist/css'));
-		//.pipe(browserSync.stream());
 
 	gulp.src('./views/sass/**/*.scss')
 		.pipe(sass({
@@ -60,7 +48,6 @@ gulp.task('styles', function() {
 			browsers: ['last 2 versions']
 		}))
 		.pipe(gulp.dest('./dist/views/css'));
-		//.pipe(browserSync.stream());
 });
 
 
