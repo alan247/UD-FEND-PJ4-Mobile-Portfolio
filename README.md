@@ -23,10 +23,10 @@ This project is nothing but a bogus website on which several optimizations were 
 1. Create a separate loop to populate an array with all the necessary phases
 1. Count the number of pizza containers and iterate through them to set a new width when changePizzaSizes() is called
 1. Optimize pizza.png
-1. Removed ´determineDx()´ function and used percentages instead of pixels to set the new pizzas' width
+1. Removed `determineDx()` function and used percentages instead of pixels to set the new pizzas' width
 1. Calculate the number of pizzas needed for the background by calculating the number of rows available in the viewport (innerHeight / 100)
-1. Cached DOM query on ´movingPizzas´ variable (´document.getElementById("movingPizzas1")´) to avoid querying the DOM on each loop iteration 
-1. Added ´transform: translateZ(0)´ to ´.mover´ to use hardware accelerated css
+1. Cached DOM query on `movingPizzas` variable (`document.getElementById("movingPizzas1")`) to avoid querying the DOM on each loop iteration 
+1. Added `transform: translateZ(0)` to `.mover` to use hardware accelerated css
 
 
 
