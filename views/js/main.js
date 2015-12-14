@@ -148,7 +148,11 @@ String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-// Pulls adjective out of array using random number sent from generator
+/**
+* @description Pulls adjective out of array using random number sent from generator()
+* @param {string} x - String (adjective)
+* @returns {array} An array of adjectives
+*/
 function getAdj(x){
   switch(x) {
     case "dark":
@@ -212,7 +216,11 @@ function getAdj(x){
   }
 }
 
-// Pulls noun out of array using random number sent from generator
+/**
+* @description Pulls noun out of array using random number sent from generator()
+* @param {string} y - String (noun)
+* @returns {array} An array of nouns
+*/
 function getNoun(y) {
   switch(y) {
     case "animals":
@@ -285,7 +293,12 @@ function getNoun(y) {
 var adjectives = ["dark", "color", "whimsical", "shiny", "noise", "apocalyptic", "insulting", "praise", "scientific"];  // types of adjectives for pizza titles
 var nouns = ["animals", "everyday", "fantasy", "gross", "horror", "jewelry", "places", "scifi"];                        // types of nouns for pizza titles
 
-// Generates random numbers for getAdj and getNoun functions and returns a new pizza name
+/**
+* @description Generates random numbers for getAdj() and getNoun() functions and returns a new pizza name
+* @param {string} adj - String (noun)
+* @param {string} noun - String (noun)
+* @returns {string} A random pizza name ("The 'adjective' 'noun'")
+*/
 function generator(adj, noun) {
   var adjectives = getAdj(adj);
   var nouns = getNoun(noun);
@@ -295,14 +308,20 @@ function generator(adj, noun) {
   return name;
 }
 
-// Chooses random adjective and random noun
+/**
+* @description Chooses random adjective and random noun
+* @returns {string} Result from calling generator() with random parameters
+*/
 function randomName() {
   var randomNumberAdj = parseInt(Math.random() * adjectives.length);
   var randomNumberNoun = parseInt(Math.random() * nouns.length);
   return generator(adjectives[randomNumberAdj], nouns[randomNumberNoun]);
 }
 
-// These functions return a string of a random ingredient from each respective category of ingredients.
+/**
+* @description These functions return a string of a random ingredient from each respective category of ingredients.
+* @returns {string} Random ingredient
+*/
 var selectRandomMeat = function() {
   var randomMeat = pizzaIngredients.meats[Math.floor((Math.random() * pizzaIngredients.meats.length))];
   return randomMeat;
@@ -332,7 +351,10 @@ var ingredientItemizer = function(string) {
   return "<li>" + string + "</li>";
 };
 
-// Returns a string with random pizza ingredients nested inside <li> tags
+/**
+* @description Returns a string with random pizza ingredients nested inside <li> tags
+* @returns {string} <li> element with random pizza ingredients
+*/
 var makeRandomPizza = function() {
   var pizza = "";
 
@@ -358,7 +380,11 @@ var makeRandomPizza = function() {
   return pizza;
 };
 
-// returns a DOM element for each pizza
+/**
+* @description Returns a DOM element for each pizza
+* @param {number} i
+* @returns {string} DOM element for a random pizza with an image and ingredients list
+*/
 var pizzaElementGenerator = function(i) {
   var pizzaContainer,             // contains pizza title, image and list of ingredients
       pizzaImageContainer,        // contains the pizza image
@@ -398,7 +424,10 @@ var pizzaElementGenerator = function(i) {
   return pizzaContainer;
 };
 
-// resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
+/**
+* @description This function is called when the slider in the "Our Pizzas" section of the website moves. It changes the size of all pizzas on the page.
+* @param {number} size
+*/
 var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
@@ -420,8 +449,6 @@ var resizePizzas = function(size) {
   }
 
   changeSliderLabel(size);
-
-  // Removed determineDX function
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
@@ -457,9 +484,9 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
-// This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 
-  var pizzasDiv = document.getElementById("randomPizzas");
+// This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
@@ -474,8 +501,11 @@ console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "
 // Used by updatePositions() to decide when to log the average time per frame
 var frame = 0;
 
-// Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
-function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
+/**
+* @description Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
+* @param {number} times - This is the array of User Timing measurements from updatePositions()
+*/
+function logAverageFrame(times) {
   var numberOfEntries = times.length;
   var sum = 0;
   for (var i = numberOfEntries - 1; i > numberOfEntries - 11; i--) {
@@ -484,10 +514,9 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   console.log("Average time to generate last 10 frames: " + sum / 10 + "ms");
 }
 
-// The following code for sliding background pizzas was pulled from Ilya's demo found at:
-// https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-
-// Moves the sliding background pizzas based on scroll position
+/**
+* @description Moves the sliding background pizzas based on scroll position
+*/
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
