@@ -5,7 +5,6 @@ var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var clean = require('gulp-clean');
 
 gulp.task('default', ['copy-htmls', 'images', 'styles', 'scripts', 'lint'], function() {
 	gulp.watch('./**/*.scss', ['styles']);
